@@ -107,7 +107,7 @@ public class ELProcessor {
                 new MethodSignature(context, methodName, className);
 
         if (function.length() == 0) {
-            function = sig.getName();
+            function = sig.getName(); //bisogna modificare il parametro function, in questo caso è necessario utilizzare il parametro
         }
 
         Method methods[] = clazz.getMethods();
