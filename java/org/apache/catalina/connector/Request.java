@@ -893,11 +893,12 @@ public class Request implements HttpServletRequest {
      * Test if a given name is one of the special Servlet-spec SSL attributes.
      */
     static boolean isSSLAttribute(String name) {
-        return Globals.CERTIFICATES_ATTR.equals(name) ||
-            Globals.CIPHER_SUITE_ATTR.equals(name) ||
-            Globals.KEY_SIZE_ATTR.equals(name)  ||
-            Globals.SSL_SESSION_ID_ATTR.equals(name) ||
-            Globals.SSL_SESSION_MGR_ATTR.equals(name);
+        boolean exp1=Globals.CERTIFICATES_ATTR.equals(name), exp2=Globals.CIPHER_SUITE_ATTR.equals(name);
+    	boolean exp12=(exp1||exp2);
+    	boolean exp3=Globals.KEY_SIZE_ATTR.equals(name), exp123=(exp12||exp3);
+    	boolean exp4=Globals.SSL_SESSION_ID_ATTR.equals(name), exp1234=(exp123||exp4);
+    	boolean exp5=Globals.SSL_SESSION_MGR_ATTR.equals(name);
+    	return (exp1234||exp5);
     }
 
     /**
