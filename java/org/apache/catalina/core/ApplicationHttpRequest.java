@@ -67,7 +67,7 @@ class ApplicationHttpRequest extends HttpServletRequestWrapper {
     /**
      * The set of attribute names that are special for request dispatchers.
      */
-    protected static final String specials[] =
+    private static final String specials[] =
     { RequestDispatcher.INCLUDE_REQUEST_URI,
       RequestDispatcher.INCLUDE_CONTEXT_PATH,
       RequestDispatcher.INCLUDE_SERVLET_PATH,
