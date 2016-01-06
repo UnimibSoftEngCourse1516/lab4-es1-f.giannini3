@@ -472,8 +472,12 @@ public class DigestAuthenticator extends AuthenticatorBase {
         }
 
         public boolean validate(Request request) {
-            if ( (userName == null) || (realmName == null) || (nonce == null)
-                 || (uri == null) || (response == null) ) {
+            boolean exp1=(userName==null), exp2=(realmName==null);
+            boolean exp12=(exp1||exp2);
+            boolean exp3=(nonce==null), exp123=(exp12||exp3);
+            boolean exp4=(uri==null), exp1234=(exp123||exp4);
+            boolean exp5=(response==null);
+        	if (exp1234 || exp5 ) {
                 return false;
             }
 
