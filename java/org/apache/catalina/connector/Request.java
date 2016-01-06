@@ -2934,7 +2934,8 @@ public class Request implements HttpServletRequest {
             if (c!='\\') {
                 buf.append(c);
             } else {
-                if (++i >= s.length())
+                int j=i+1;
+            	if (j >= s.length())
                  {
                     throw new IllegalArgumentException();//invalid escape, hence invalid cookie
                 }
