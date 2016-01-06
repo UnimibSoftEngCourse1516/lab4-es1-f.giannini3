@@ -86,10 +86,6 @@ public class HttpSessionBindingEvent extends HttpSessionEvent {
      * Get the session that changed.
      * @return The session that changed
      */
-    @Override
-    public HttpSession getSession() {
-        return super.getSession();
-    }
 
     /**
      * Returns the name with which the attribute is bound to or unbound from the
